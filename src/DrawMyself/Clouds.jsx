@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Clouds extends Component {
   componentDidMount() {
+    window.onload = () => {
       const canvas      = document.querySelector('.Clouds');
       const ctx         = canvas.getContext('2d');
       let yPosMax       = canvas.height / 1.2;
@@ -38,12 +39,17 @@ class Clouds extends Component {
       ctx.lineTo(0, canvas.height);
       ctx.fill();
 
+      window.onresize = function(){
+        let { height, width } = document.querySelector('body').getBoundingClientRect();
+        canvas.height = height;
+        canvas.width = width;
+      }
+    }
   }
 
   render() {
     // console.log(document.getElementById('root'), document.querySelector('body'));
-    let { height } = document.querySelector('body').getBoundingClientRect();
-    let { width }  = document.querySelector('body').getBoundingClientRect();
+    let { height, width } = document.querySelector('body').getBoundingClientRect();
     return <canvas className="Clouds" height={height} width={width}></canvas>;
   }
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class StarSky extends Component {
   componentDidMount() {
-    window.onload = () => {
       const canvas = document.querySelector('.StarSky');
       const ctx    = canvas.getContext('2d');
       let stars    = [];
@@ -39,12 +38,16 @@ class StarSky extends Component {
       }
 
       pulse();
-    }
+
+      window.onresize = function(){
+        let { height, width } = document.querySelector('body').getBoundingClientRect();
+        canvas.height = height;
+        canvas.width = width;
+      }
   }
 
   render() {
-    let { height } = document.querySelector('body').getBoundingClientRect();
-    let { width }  = document.querySelector('body').getBoundingClientRect();
+    let { height, width } = document.querySelector('body').getBoundingClientRect();
     return <canvas className="StarSky" height={height} width={width}></canvas>;
   }
 }
