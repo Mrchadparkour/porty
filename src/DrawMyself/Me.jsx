@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import mePixels from './assets/me.png';
+import mePixels from './assets/eyeLess.png';
 import Clouds from './Clouds';
 import StarSky from './starSky';
 import Eyes from './Eyes';
