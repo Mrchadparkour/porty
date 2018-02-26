@@ -1,58 +1,60 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-
-body, html, #root {
+html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
 }
 
-.Me {
-  max-height: 100%;
-  max-width: 100%;
-  position: relative;
-  z-index: 2;
-}
-
-.MeContainer {
-  height: 100%;
+body, #root {
+  height: 300vh;
   width: 100%;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-.Clouds {
+.SubRow {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  top: 100vh;
 }
 
-.StarSky {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  background: #005b96;
+.Filter {
+  /* background: rgba(0,0,0, .5); */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  -moz-box-shadow: inset 0 0 20px #005b96;
+  -webkit-box-shadow: inset 0 0 20px #005b96;
+  box-shadow: inset 0 0 20px #005b96;
 }
 
-.Eyes {
-  position: absolute;
-  top: 34.375%;
-  left: 14.322%;
-  z-index: 3;
+.Work {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  overflow: hidden;
+}
+
+.Links>hr {
+  height: 6vh;
+}
+
+.Links>a {
+  color: white;
+  font-size: 5vh;
+}
+
+.Links>a:visited {
+  color: white;
 }
 
 .Title {
-  position: absolute;
-  font-size: 7vh;
-  top: 20%;
-  right: 20%;
-  z-index: 2;
-  color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-size: 20vh;
 }
