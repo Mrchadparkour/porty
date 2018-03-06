@@ -24,11 +24,4 @@ export default [
     gitLinks: ["https://github.com/Mrchadparkour/form-herder", "https://github.com/Mrchadparkour/simple-smtp-server"],
     wLink: "http://signup.blendedmarket.com/client-setup"
   },
-  {
-    title: "hidden",
-    image: "",
-    desc: "Unfortunately my favorite projects are proprietary and the are yet to be released! Maybe they'll show up here later.",
-    gitLinks: [],
-    wLink: ""
-  }
 ]

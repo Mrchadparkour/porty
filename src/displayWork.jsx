@@ -8,19 +8,18 @@ class DisplayWork extends Component {
         {
           gits.map(i => i)
         }
+        <hr />
         <a href={wLink} target="_blank"><i className="fa fa-window-maximize" aria-hidden="true"></i></a>
       </div>
     );
   }
   render() {
-    const { image, title, desc, gitLinks, wLink } = this.props;
+    const { image, title, desc, gitLinks, wLink, i } = this.props;
     return(
-      <div style={{backgroundImage:`url(${image})`}} className="Work">
-        <div className="Filter">
-          <h1 className="Title">{title}</h1>
-          <p className="Description">{desc}</p>
-          { this.showLinks(gitLinks, wLink) }
-        </div>
+      <div className="DWork" >
+            <h1 className="Title" style={{backgroundImage:`url(${image})`}}>{title}</h1>
+            <p className="Description">{desc}</p>
+            { this.showLinks(gitLinks, wLink) }
       </div>
     );
   }

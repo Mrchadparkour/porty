@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
 html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body, #root {
@@ -15,35 +17,60 @@ body, #root {
   padding: 0;
 }
 
+.WhiteLayer {
+  background: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10vh;
+  color: transparent
+}
+
+.Title {
+  font-size: 20vh;
+  /* background: inherit; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Amatic SC';
+  font-weight: bold;
+}
+
 .SubRow {
   position: absolute;
   top: 100vh;
 }
 
-.Filter {
-  /* background: rgba(0,0,0, .5); */
-  color: white;
+.DWork {
+  padding: 10vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  color: white;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  -moz-box-shadow: inset 0 0 20px #005b96;
-  -webkit-box-shadow: inset 0 0 20px #005b96;
-  box-shadow: inset 0 0 20px #005b96;
+  background-size: cover;
 }
 
 .Work {
-  height: 100vh;
-  background-size: cover;
+  height: 50vh;
+  background-size: contain;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 50%;
   overflow: hidden;
 }
 
+.Links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 10%;
+  }
+
 .Links>hr {
-  height: 6vh;
+  height: 3vh;
+  color: white;
 }
 
 .Links>a {
@@ -53,8 +80,4 @@ body, #root {
 
 .Links>a:visited {
   color: white;
-}
-
-.Title {
-  font-size: 20vh;
 }
