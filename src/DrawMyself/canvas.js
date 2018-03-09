@@ -3,7 +3,7 @@ export function cloudHandler(startY, color, className) {
     const ctx         = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.height, canvas.width);
     let { height, width } = document.querySelector('body').getBoundingClientRect();
-    canvas.height     = height /3;
+    canvas.height     = height;
     canvas.width      = width;
     let yPosMax       = canvas.height / startY;
     let yPosMin       = canvas.height;
@@ -46,7 +46,7 @@ export function starhandler() {
   const canvas = document.querySelector('.StarSky');
   const ctx    = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas,height);
-  canvas.height = height /3;
+  canvas.height = height;
   canvas.width  = width;
   let stars    = [];
 
@@ -89,9 +89,9 @@ export function eyeHandler() {
   const canvas      = document.querySelector('.Eyes');
   const ctx         = canvas.getContext('2d');
   let { height } = document.querySelector('body').getBoundingClientRect();
-  let adjHeight         = height / 3.84 / 3;
+  let adjHeight         = height / 3.84;
   let adjWidth          = adjHeight * 1.321858864;
-  let leftDist          = height * .286458 / 3;
+  let leftDist          = height * .286458;
 
   ctx.clearRect(0,0, canvas.width, canvas.height);
   canvas.height     = adjHeight;

@@ -14,9 +14,10 @@ class DisplayWork extends Component {
     );
   }
   render() {
-    const { image, title, desc, gitLinks, wLink, i } = this.props;
+    const { image, title, desc, gitLinks, wLink, i, left } = this.props;
+    const { height, width } = document.querySelector('body').getBoundingClientRect();
     return(
-      <div className="DWork" >
+      <div className="DWork" style={{left}} initial={left}>
             <h1 className="Title" style={{backgroundImage:`url(${image})`}}>{title}</h1>
             <p className="Description">{desc}</p>
             { this.showLinks(gitLinks, wLink) }

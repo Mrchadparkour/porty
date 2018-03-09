@@ -1,5 +1,85 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
+.mouse {
+  display: block;
+  margin: 0 auto;
+  width: 23px;
+  height: 40px;
+  border-radius: 13px;
+  border: 2px solid black;
+  position: absolute;
+  top: 90%;
+  position: absolute;
+  left: 50%;
+  z-index: 20;
+  margin-left: -14px;
+  -webkit-animation: reveal 20s linear;
+  animation: reveal 20s linear;
+}
+
+.mouse > span {
+    display: block;
+    margin: 6px auto;
+    width: 3px;
+    height: 7px;
+    border-radius: 100%;
+    background: black;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: scroll;
+    animation-name: scroll;
+  }
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(12px);
+    -ms-transform: translateY(12px);
+    transform: translateY(12px);
+  }
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -10,7 +90,7 @@ html {
 }
 
 body, #root {
-  height: 300vh;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   margin: 0;
@@ -44,13 +124,15 @@ body, #root {
 }
 
 .DWork {
-  padding: 10vh;
   display: flex;
+  position: absolute;
+  width: 100vw;
+  top: 0;
   flex-direction: column;
   color: white;
   justify-content: space-between;
   align-items: center;
-  background-size: cover;
+  z-index: 20;
 }
 
 .Work {
