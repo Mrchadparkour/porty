@@ -82,13 +82,6 @@ path {
   z-index: 4;
 }
 
-.Contact>h1 {
-  font-family: 'Amatic SC', cursive;
-  font-size: 15vh;
-  color: white;
-  margin: 0;
-}
-
 .Contact>hr {
   width: 50%;
 }

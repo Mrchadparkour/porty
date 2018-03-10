@@ -24,7 +24,9 @@ class Contact extends Component {
   render() {
     return(
       <div className="Contact">
-        <Words />
+        <div>
+          <Words />
+        </div>
         <hr />
         <div className="Icons">
           <a href="https://github.com/mrchadparkour" rel="noopener noreferrer" target="_blank"><i className="fa fa-github" aria-hidden="true"></i></a>

@@ -8,17 +8,21 @@ class DisplayWork extends Component {
         {
           gits.map(i => i)
         }
-        <hr />
-        <a href={wLink} target="_blank"><i className="fa fa-window-maximize" aria-hidden="true"></i></a>
+        { (!wLink) ? null : <hr /> }
+        {
+          (!wLink)
+          ? null
+          : <a href={wLink} target="_blank"><i className="fa fa-window-maximize" aria-hidden="true"></i></a>
+        }
       </div>
     );
   }
+
   render() {
-    const { image, title, desc, gitLinks, wLink, i, left } = this.props;
-    const { height, width } = document.querySelector('body').getBoundingClientRect();
+    const { image, title, desc, gitLinks, wLink, left, xRules } = this.props;
     return(
       <div className="DWork" style={{left}} initial={left}>
-            <h1 className="Title" style={{backgroundImage:`url(${image})`}}>{title}</h1>
+            <h1 className={`Title ${xRules}`} style={{backgroundImage:`url(${image})`}}>{title}</h1>
             <p className="Description">{desc}</p>
             { this.showLinks(gitLinks, wLink) }
       </div>

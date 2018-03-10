@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { TweenMax } from 'gsap';
-import { cloudHandler, starhandler, eyeHandler } from './canvas';
+import starHandler from '../canvasAnis/starHandler';
+import cloudHandler from '../canvasAnis/cloudHandler';
+import eyeHandler from '../canvasAnis/eyeHandler';
 import mePixels from './assets/eyeLess.png';
-
 import Contact from './Contact';
 import Eyes from './Eyes';
 import './me.css';
@@ -12,7 +13,7 @@ class Me extends Component {
     super();
     this.state = { panel: 0, canMove: true }
   }
-  componentDidMount() {
+  componentWillMount() {
     window.onload = this.drawAllCanvas;
     window.onresize = this.drawAllCanvas;
     window.addEventListener('wheel', (e) => this.handleScroll(e));
@@ -25,7 +26,7 @@ class Me extends Component {
       this.setState({canMove: false});
       setTimeout(() => this.setState({canMove: true}), 1000);
       if (e.deltaY > 0) {
-        if (panel < 3){
+        if (panel < 5){
           panel++;
           this.move(panel);
         }
@@ -38,7 +39,6 @@ class Me extends Component {
 
       this.setState({ panel });
     }
-    console.log(this.state.panel)
   }
 
   move(panel) {
@@ -47,15 +47,14 @@ class Me extends Component {
       let nodes   = document.querySelectorAll(q);
       nodes.forEach(node => {
         if (typeof node !== 'number') {
-          console.log(panel)
-          TweenMax.to(node, 1, {left: (panel * -100 ) + parseInt(node.attributes.initial.value) + 'vw'});
+          TweenMax.to(node, 1, {left: (panel * -100 ) + parseInt(node.attributes.initial.value, 10) + 'vw'});
         }
       })
     });
   }
 
   drawAllCanvas() {
-    starhandler();
+    starHandler();
     eyeHandler();
     cloudHandler(1.2, "#BABEBE", "Clouds1");
     cloudHandler(1, null, "Clouds2");

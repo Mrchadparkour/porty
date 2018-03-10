@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Me from './DrawMyself/Me';
-import DisplayWork from './displayWork';
-import workContent from './workContent';
+import DisplayWork from './works/displayWork';
+import workContent from './works/workContent';
 import Clouds from './DrawMyself/Clouds';
 import StarSky from './DrawMyself/starSky';
 

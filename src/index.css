@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
+.Description {
+  font-family: 'Amatic SC';
+  font-size: 5vh;
+  font-weight: bolder;
+  max-width: 60%;
+}
+
 .mouse {
   display: block;
   margin: 0 auto;
@@ -8,7 +15,7 @@
   border-radius: 13px;
   border: 2px solid black;
   position: absolute;
-  top: 90%;
+  top: 95%;
   position: absolute;
   left: 50%;
   z-index: 20;
@@ -17,22 +24,22 @@
   animation: reveal 20s linear;
 }
 
-.mouse > span {
-    display: block;
-    margin: 6px auto;
-    width: 3px;
-    height: 7px;
-    border-radius: 100%;
-    background: black;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-name: scroll;
-    animation-name: scroll;
-  }
+.mouse>span {
+  display: block;
+  margin: 6px auto;
+  width: 3px;
+  height: 7px;
+  border-radius: 100%;
+  background: black;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+}
 
 @keyframes reveal {
   from {
@@ -110,12 +117,60 @@ body, #root {
 }
 
 .Title {
+  font-family: 'Amatic SC';
   font-size: 20vh;
-  /* background: inherit; */
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  margin: .25em;
+  padding: .5em .75em;
+  text-align: center;
+  /* Color fallback */
+  color: #fff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Amatic SC';
-  font-weight: bold;
+}
+
+.Title,
+.Title:before {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 10px;
+}
+
+.BadBack {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+.Title:before,
+.Title:after {
+    position: absolute;
+    content: '';
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+.Title:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+/* Text Background (black zone) */
+.Title:after {
+    position: absolute;
+    z-index: -1;
+    top: .125em;
+    right: .125em;
+    bottom: .125em;
+    left: .125em;
+    background-color: #000;
 }
 
 .SubRow {
@@ -127,11 +182,12 @@ body, #root {
   display: flex;
   position: absolute;
   width: 100vw;
+  height: 100vh;
   top: 0;
   flex-direction: column;
   color: white;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   z-index: 20;
 }
 
@@ -148,7 +204,7 @@ body, #root {
   flex-direction: row;
   justify-content: space-around;
   width: 10%;
-  }
+}
 
 .Links>hr {
   height: 3vh;
