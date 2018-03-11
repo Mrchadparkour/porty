@@ -1,44 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
+.hint {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 45%;
+  font-size: 3vh;
+  color: white;
+  font-family: 'Amatic SC';
+  animation: reveal 15s linear;
+}
+
 .Description {
   font-family: 'Amatic SC';
   font-size: 5vh;
-  font-weight: bolder;
+  font-weight: 600;
   max-width: 60%;
-}
-
-.mouse {
-  display: block;
-  margin: 0 auto;
-  width: 23px;
-  height: 40px;
-  border-radius: 13px;
-  border: 2px solid black;
-  position: absolute;
-  top: 95%;
-  position: absolute;
-  left: 50%;
-  z-index: 20;
-  margin-left: -14px;
-  -webkit-animation: reveal 20s linear;
-  animation: reveal 20s linear;
-}
-
-.mouse>span {
-  display: block;
-  margin: 6px auto;
-  width: 3px;
-  height: 7px;
-  border-radius: 100%;
-  background: black;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: scroll;
-  animation-name: scroll;
+  text-shadow: 1px 1px 1px black;
 }
 
 @keyframes reveal {
@@ -214,8 +192,11 @@ body, #root {
 .Links>a {
   color: white;
   font-size: 5vh;
+  text-shadow: 1px 1px 1px black;
 }
 
 .Links>a:visited {
   color: white;
+  text-shadow: 1px 1px 1px black;
+
 }

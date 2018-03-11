@@ -16,9 +16,7 @@ class App extends Component {
         {
           workContent.map((obj, i) => <DisplayWork key={obj.title} i={i} left={((i + 1) * 100) + 'vw'} {...obj}/>)
         }
-        <div className="mouse">
-          <span></span>
-        </div>
+          <span className="hint">Try Scrolling</span>
       </div>
     );
   }
