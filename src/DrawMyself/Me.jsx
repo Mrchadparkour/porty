@@ -32,7 +32,7 @@ class Me extends Component {
         if (panel < 5){
           panel++;
           this.move(panel);
-          document.querySelector('.hint').remove();
+          if (document.querySelector('.hint')) document.querySelector('.hint').remove();
         }
       } else {
         if (panel > 0) {
