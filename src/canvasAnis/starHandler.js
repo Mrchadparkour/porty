@@ -2,21 +2,21 @@ export default function() {
   let { height, width } = document.querySelector('body').getBoundingClientRect();
   const canvas = document.querySelector('.StarSky');
   const ctx    = canvas.getContext('2d');
-  ctx.clearRect(0, 0, canvas.width, canvas,height);
+  ctx.clearRect(0, 0, width, height);
   canvas.height = height;
   canvas.width  = width;
   let stars    = [];
 
   for (var i = 0; i < canvas.width; i++) {
     stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      x: Math.random() * width,
+      y: Math.random() * height,
       ratio: Math.random()
     });
   }
 
   function drawStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = 'white';
     stars.forEach(star => {
       ctx.beginPath();
@@ -35,7 +35,7 @@ export default function() {
   function pulse() {
     update();
     drawStars();
-    requestAnimationFrame(pulse);
+    window.requestAnimationFrame(pulse);
   }
 
   pulse();

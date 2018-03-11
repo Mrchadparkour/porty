@@ -1,7 +1,7 @@
 export default function () {
   const canvas      = document.querySelector('.Eyes');
   const ctx         = canvas.getContext('2d');
-  let { height } = document.querySelector('body').getBoundingClientRect();
+  let { height } = document.querySelector('html').getBoundingClientRect();
   let adjHeight         = height / 3.84;
   let adjWidth          = adjHeight * 1.321858864;
   let leftDist          = height * .286458;
@@ -16,7 +16,10 @@ export default function () {
   let eyeX          = eyeWH;
   canvas.style.left = document.querySelector('body').getBoundingClientRect().height * .286458;
 
-  let canvX = canvas.getBoundingClientRect().x;
+  // let canvX = canvas.getBoundingClientRect().x;
+  // let canvY = canvas.getBoundingClientRect().y;
+
+  let canvX = parseInt(canvas.style.left);
   let canvY = canvas.getBoundingClientRect().y;
 
   function moveEyes(e) {
@@ -24,6 +27,7 @@ export default function () {
     if (eyeY > canvas.height / 4.5 && clientY < eyeY + canvY) eyeY -=2;
     else if (eyeY < startY && clientY > eyeY + canvY) eyeY+=2;
 
+    console.log(clientX, " Should be less than ",  eyeX, " + ", canvX);
     if (eyeX > eyeWH / 2 && clientX < eyeX + canvX) eyeX-=2;
     else if (eyeX < eyeWH && clientX > eyeX + canvX) eyeX+=2;
 

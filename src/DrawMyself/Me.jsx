@@ -14,8 +14,11 @@ class Me extends Component {
     this.state = { panel: 0, canMove: true }
   }
   componentWillMount() {
-    window.onload = this.drawAllCanvas;
-    window.onresize = this.drawAllCanvas;
+    window.onload = () => this.drawAllCanvas();
+    window.onresize = () => {
+      window.onload = null;
+      window.onload = this.drawAllCanvas();
+    }
     window.addEventListener('wheel', (e) => this.handleScroll(e));
   }
 
@@ -42,7 +45,6 @@ class Me extends Component {
   }
 
   move(panel) {
-    // let bodyWidth = document.querySelector('body').getBoundingClientRect().width;
     [ '.MeContainer', '.DWork'].forEach(q => {
       let nodes   = document.querySelectorAll(q);
       nodes.forEach(node => {
@@ -51,6 +53,8 @@ class Me extends Component {
         }
       })
     });
+
+    if (panel === 0) eyeHandler();
   }
 
   drawAllCanvas() {
@@ -58,6 +62,7 @@ class Me extends Component {
     eyeHandler();
     cloudHandler(1.2, "#BABEBE", "Clouds1");
     cloudHandler(1, null, "Clouds2");
+    window.onload = null;
   }
 
   render() {
